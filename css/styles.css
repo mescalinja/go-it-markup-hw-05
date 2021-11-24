@@ -157,6 +157,8 @@ button {
   position: relative;
   padding: 32px 0 32px 0;
 
+  transition: color var(--transition-time) var(--cubic);
+
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
@@ -187,8 +189,20 @@ button {
   color: var(--accent-color);
 }
 
+.header-link:hover,
+.header-link:focus,
+.header-mail:hover,
+.header-mail:focus,
+.header-tel:hover,
+.header-tel:focus {
+  transform: color;
+  color: var(--accent-color);
+}
+
 .header-mail,
 .header-tel {
+  transition: color var(--transition-time) var(--cubic);
+
   display: flex;
   padding: 32px 0 32px 0;
   font-weight: 500;
@@ -243,6 +257,8 @@ button {
 }
 
 .hero-btn {
+  transition: background-color var(--transition-time) var(--cubic);
+
   display: flex;
   margin-left: auto;
   margin-right: auto;
@@ -266,6 +282,8 @@ button {
 
 .hero-btn:hover,
 .hero-btn:focus {
+  transform: background-color;
+
   background-color: var(--btn-hover-color);
 }
 
@@ -509,20 +527,28 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  transition: background-color var(--transition-time) var(--cubic);
 }
 
 .team-social-link:hover,
 .team-social-link:focus {
+  transform: background-color;
+
   background-color: var(--accent-color);
 }
 
 .team-social-link:hover .team-social-icon,
 .team-social-link:focus .team-social-icon {
+  transform: fill;
+
   fill: var(--white-color);
 }
 
 .team-social-icon {
   fill: #afb1b8;
+
+  transition: fill var(--transition-time) var(--cubic);
 }
 
 /* .............CLIENTS................ */
@@ -560,20 +586,28 @@ button {
   height: 92px;
   border: 1px solid #afb1b8;
   border-radius: 4px;
+
+  transition: border-color var(--transition-time) var(--cubic);
 }
 
 .clients-list-link:hover,
 .clients-list-link:focus {
-  border-color: var(--accent-color);
-}
+  transform: border-color;
 
-.clients-icon {
-  fill: #afb1b8;
+  border-color: var(--accent-color);
 }
 
 .clients-list-link:hover .clients-icon,
 .clients-list-link:focus .clients-icon {
+  transform: fill;
+
   fill: var(--accent-color);
+}
+
+.clients-icon {
+  fill: #afb1b8;
+
+  transition: fill var(--transition-time) var(--cubic);
 }
 
 /* .............FOOTER................ */
@@ -618,6 +652,8 @@ button {
 
 .footer-mail,
 .footer-tel {
+  transition: color var(--transition-time) var(--cubic);
+
   font-style: normal;
   font-size: 14px;
   line-height: 1.71;
@@ -629,6 +665,8 @@ button {
 .footer-mail:focus,
 .footer-tel:hover,
 .footer-tel:focus {
+  transform: color;
+
   color: var(--accent-color);
 }
 
@@ -657,6 +695,8 @@ button {
 }
 
 .social-footer-link {
+  transition: background-color var(--transition-time) var(--cubic);
+
   width: 100%;
   height: 100%;
   border-radius: 50%;
@@ -669,6 +709,8 @@ button {
 
 .social-footer-link:hover,
 .social-footer-link:focus {
+  transform: background-color;
+
   background-color: var(--accent-color);
 }
 
@@ -691,6 +733,9 @@ button {
 }
 
 .products-nav-btn {
+  transition: background-color var(--transition-time) var(--cubic),
+    color var(--transition-time) var(--cubic);
+
   padding: 6px 22px 6px 22px;
 
   font-family: inherit;
@@ -710,6 +755,8 @@ button {
 .products-nav-btn:hover,
 .products-nav-btn:focus,
 .products-nav .products-nav-btn.current-btn {
+  transform: background-color, color, box-shadow;
+
   color: var(--white-color);
   background: var(--accent-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
@@ -722,6 +769,8 @@ button {
 }
 
 .products-item {
+  transition: box-shadow var(--transition-time) var(--cubic);
+
   flex-basis: calc((100% - 60px) / 3);
   margin-right: 30px;
   margin-bottom: 30px;
@@ -729,6 +778,8 @@ button {
 
 .products-item:hover,
 .products-item:focus {
+  transform: box-shadow;
+
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
