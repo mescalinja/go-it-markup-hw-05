@@ -27,6 +27,10 @@
   overflow: hidden;
 }
 
+a {
+  text-decoration: none;
+}
+
 p,
 h1,
 h2,
@@ -132,11 +136,25 @@ button {
   margin-right: auto;
 }
 
+.header-link.current:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  content: "";
+  width: 100%;
+  height: 4px;
+
+  background: var(--accent-color);
+  border-radius: 2px;
+}
+
 .header-item:not(:last-child) {
   margin-right: 50px;
 }
 
 .header-link {
+  position: relative;
   padding: 32px 0 32px 0;
 
   font-weight: 500;
@@ -257,6 +275,10 @@ button {
   position: fixed;
   left: 0px;
   top: 0px;
+  z-index: 999;
+
+  opacity: 1;
+  transition: opacity var(--transition-time) var(--cubic);
 
   width: 100%;
   height: 100%;
@@ -265,15 +287,22 @@ button {
 }
 
 .backdrop.is-hidden {
+  visibility: 0;
   opacity: 0;
   pointer-events: none;
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.7);
 }
 
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform var(--transition-time) var(--cubic);
 
   min-height: 581px;
   min-width: 528px;
@@ -375,9 +404,6 @@ button {
 
 .we-do-item {
   flex-basis: calc((100% - 60px) / 3);
-}
-
-.we-do-img {
 }
 
 .we-do-thumb {
@@ -715,6 +741,58 @@ button {
   margin-bottom: 0px;
 }
 
+.products-thumb {
+  position: relative;
+  overflow: hidden;
+}
+
+.products-overlay-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  opacity: 0;
+
+  padding: 63px 24px;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+
+  color: var(--white-color);
+}
+
+.products-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+
+  background-color: rgba(33, 150, 243, 0.9);
+}
+
+.products-overlay,
+.products-overlay-text {
+  transform: translateY(100%);
+  transition: transform var(--transition-time) var(--cubic);
+}
+
+.products-item:hover .products-overlay,
+.products-item:hover .products-overlay-text {
+  transform: translateY(0);
+}
+
+.products-item:hover .products-overlay,
+.products-item:hover .products-overlay-text {
+  opacity: 1;
+}
+
+.border-wrap {
+  border: 1px solid #eeeeee;
+  border-top: 0px;
+  padding: 20px 24px;
+}
+
 .products-item-title {
   margin-bottom: 4px;
 
@@ -731,10 +809,4 @@ button {
   line-height: 1.87;
   letter-spacing: 0.03em;
   color: var(--gray-color);
-}
-
-.border-wrap {
-  border: 1px solid #eeeeee;
-  border-top: 0px;
-  padding: 20px 24px;
 }
