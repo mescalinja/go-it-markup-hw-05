@@ -7,6 +7,7 @@
   --dark-gray-color: #2f303a;
   --accent-color: #2196f3;
   --btn-hover-color: #188ce8;
+  --icons-gray: #afb1b8;
 
   --cubic: cubic-bezier(0.4, 0, 0.2, 1);
   --transition-time: 250ms;
@@ -154,10 +155,10 @@ button {
 }
 
 .header-link {
+  transition: color var(--transition-time) var(--cubic);
+
   position: relative;
   padding: 32px 0 32px 0;
-
-  transition: color var(--transition-time) var(--cubic);
 
   font-weight: 500;
   font-size: 14px;
@@ -196,6 +197,7 @@ button {
 .header-tel:hover,
 .header-tel:focus {
   transform: color;
+
   color: var(--accent-color);
 }
 
@@ -520,15 +522,20 @@ button {
   height: 44px;
 }
 
+.team-social-item:not(:last-child) {
+  margin-right: 10px;
+}
+
 .team-social-link {
   transition: background-color var(--transition-time) var(--cubic);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .team-social-link:hover,
@@ -548,7 +555,7 @@ button {
 .team-social-icon {
   transition: fill var(--transition-time) var(--cubic);
 
-  fill: #afb1b8;
+  fill: var(--icons-gray);
 }
 
 /* .............CLIENTS................ */
@@ -568,46 +575,50 @@ button {
   display: flex;
 }
 
-.clients-list-item {
+.clients-item {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.clients-list-item:not(:last-child) {
+.clients-item:not(:last-child) {
   margin-right: 30px;
 }
 
-.clients-list-link {
-  transition: border-color var(--transition-time) var(--cubic);
+.clients-link {
+  transition: border-color var(--transition-time) var(--cubic),
+    color var(--transition-time) var(--cubic);
 
   display: flex;
   justify-content: center;
   align-items: center;
+
   width: 170px;
   height: 92px;
-  border: 1px solid #afb1b8;
+
+  color: var(--icons-gray);
+  border: 1px solid var(--icons-gray);
   border-radius: 4px;
 }
 
-.clients-list-link:hover,
-.clients-list-link:focus {
-  transform: border-color;
+.clients-link:hover,
+.clients-link:focus {
+  transform: border-color, color;
 
   border-color: var(--accent-color);
-}
-
-.clients-list-link:hover .clients-icon,
-.clients-list-link:focus .clients-icon {
-  transform: fill;
-
-  fill: var(--accent-color);
 }
 
 .clients-icon {
   transition: fill var(--transition-time) var(--cubic);
 
-  fill: #afb1b8;
+  fill: currentColor;
+}
+
+.clients-link:hover .clients-icon,
+.clients-link:focus .clients-icon {
+  transform: fill;
+
+  fill: var(--accent-color);
 }
 
 /* .............FOOTER................ */
