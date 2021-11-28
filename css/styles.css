@@ -786,7 +786,7 @@ button {
 }
 
 .products-link {
-   display: block;
+  display: block;
 
   transition: box-shadow var(--transition-time) var(--cubic);
 }
