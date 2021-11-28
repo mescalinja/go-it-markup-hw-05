@@ -778,8 +778,6 @@ button {
 }
 
 .products-item {
-  transition: box-shadow var(--transition-time) var(--cubic);
-
   flex-basis: calc((100% - 60px) / 3);
   margin-right: 30px;
   margin-bottom: 30px;
@@ -791,6 +789,8 @@ button {
 }
 
 .products-link {
+   display: block;
+
   transition: box-shadow var(--transition-time) var(--cubic);
 }
 
