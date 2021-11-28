@@ -587,7 +587,7 @@ button {
 
 .clients-link {
   transition: border var(--transition-time) var(--cubic),
-    fill var(--transition-time) var(--cubic);
+    color var(--transition-time) var(--cubic);
 
   display: flex;
   justify-content: center;
@@ -596,27 +596,23 @@ button {
   width: 170px;
   height: 92px;
 
-  /* color: var(--icons-gray); */
+  color: var(--icons-gray);
   border: 1px solid var(--icons-gray);
   border-radius: 4px;
 }
 
 .clients-link:hover,
 .clients-link:focus {
-  transform: border-color;
+  transform: border-color, color;
 
   border-color: var(--accent-color);
-}
-
-.clients-link:hover .clients-icon,
-.clients-link:focus .clients-icon {
-  fill: var(--accent-color);
+  color: var(--accent-color);
 }
 
 .clients-icon {
   transition: fill var(--transition-time) var(--cubic);
 
-  fill: var(--icons-gray);
+  fill: currentColor;
 }
 /* .............FOOTER................ */
 
